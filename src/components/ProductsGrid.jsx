@@ -23,7 +23,7 @@ const ProductsGrid = () => {
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2>{title}</h2>
+              <h2 className="card-title capitalize tracking-wider">{title}</h2>
               <span className="text-secondary">{dollarsAmount}</span>
             </div>
           </Link>
