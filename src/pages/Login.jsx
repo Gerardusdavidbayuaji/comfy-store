@@ -10,11 +10,11 @@ export const action =
   async ({ request }) => {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
+    console.log(store);
 
     try {
       const response = await customFetch.post("/auth/local", data);
       console.log(response);
-
       store.dispatch(loginUser(response.data));
       toast.success("logged in successfully");
       return redirect("/");
@@ -34,8 +34,8 @@ const Login = () => {
   const loginAsGuestUser = async () => {
     try {
       const response = await customFetch.post("/auth/local", {
-        identifier: "davidbayu@gmail.com",
-        password: "12345test",
+        identifier: "bejo@gmail.com",
+        password: "5432112345",
       });
       dispatch(loginUser(response.data));
       toast.success("welcome guest user");
