@@ -1,5 +1,6 @@
 import { Filters, PaginationContainer, ProductsContainer } from "../components";
 import { customFetch } from "../utils";
+
 const url = "/products";
 
 const allProductsQuery = (queryParams) => {
@@ -48,4 +49,5 @@ const Products = () => {
     </>
   );
 };
+
 export default Products;

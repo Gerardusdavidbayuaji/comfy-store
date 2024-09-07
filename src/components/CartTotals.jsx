@@ -32,4 +32,5 @@ const CartTotals = () => {
     </div>
   );
 };
+
 export default CartTotals;

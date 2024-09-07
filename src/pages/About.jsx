@@ -8,7 +8,7 @@ const About = () => {
         <div className="stats bg-primary shadow">
           <div className="stat">
             <div className="stat-title text-primary-content text-4xl font-bold tracking-widest">
-              comfy
+              tuku
             </div>
           </div>
         </div>
@@ -22,4 +22,5 @@ const About = () => {
     </>
   );
 };
+
 export default About;

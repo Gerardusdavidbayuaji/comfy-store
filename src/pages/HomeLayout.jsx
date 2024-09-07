@@ -4,6 +4,7 @@ import { Navbar, Loading, Header } from "../components";
 const HomeLayout = () => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === "loading";
+
   return (
     <>
       <Header />

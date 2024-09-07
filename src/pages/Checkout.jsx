@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
-import { CheckoutForm, SectionTitle, CartTotals } from "../components";
 import { redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+
+import { CheckoutForm, SectionTitle, CartTotals } from "../components";
 
 export const loader = (store) => async () => {
   const user = store.getState().userState.user;
@@ -15,9 +16,11 @@ export const loader = (store) => async () => {
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cartState.cartTotal);
+
   if (CartTotals === 0) {
     return <SectionTitle text="Your cart is empty" />;
   }
+
   return (
     <>
       <SectionTitle text="Place your order" />

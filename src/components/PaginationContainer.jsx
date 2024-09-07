@@ -57,4 +57,5 @@ const PaginationContainer = () => {
     </div>
   );
 };
+
 export default PaginationContainer;

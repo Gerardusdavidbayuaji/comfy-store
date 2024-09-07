@@ -12,6 +12,7 @@ const links = [
 
 const NavLinks = () => {
   const user = useSelector((state) => state.userState.user);
+
   return (
     <>
       {links.map((link) => {
@@ -28,4 +29,5 @@ const NavLinks = () => {
     </>
   );
 };
+
 export default NavLinks;

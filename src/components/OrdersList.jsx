@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import day from "dayjs";
+
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import day from "dayjs";
+
 day.extend(advancedFormat);
 
 const OrdersList = () => {
@@ -45,4 +47,5 @@ const OrdersList = () => {
     </div>
   );
 };
+
 export default OrdersList;

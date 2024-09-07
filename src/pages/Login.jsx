@@ -1,20 +1,19 @@
-import { FormInput, SubmitBtn } from "../components";
 import { Form, Link, redirect, useNavigate } from "react-router-dom";
-import { customFetch } from "../utils";
-import { toast } from "react-toastify";
-import { loginUser } from "../features/user/userSlice";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+
+import { loginUser } from "../features/user/userSlice";
+import { FormInput, SubmitBtn } from "../components";
+import { customFetch } from "../utils";
 
 export const action =
   (store) =>
   async ({ request }) => {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
-    console.log(store);
 
     try {
       const response = await customFetch.post("/auth/local", data);
-      console.log(response);
       store.dispatch(loginUser(response.data));
       toast.success("logged in successfully");
       return redirect("/");
@@ -41,7 +40,6 @@ const Login = () => {
       toast.success("welcome guest user");
       navigate("/");
     } catch (error) {
-      console.log(error);
       toast.error("guest user login error. please try again");
     }
   };
@@ -78,4 +76,5 @@ const Login = () => {
     </section>
   );
 };
+
 export default Login;

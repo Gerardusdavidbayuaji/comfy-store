@@ -1,9 +1,10 @@
 import { Form, redirect } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import { clearCart } from "../features/cart/cartSlice";
+import { customFetch, formatPrice } from "../utils";
 import FormInput from "./FormInput";
 import SubmitBtn from "./SubmitBtn";
-import { customFetch, formatPrice } from "../utils";
-import { toast } from "react-toastify";
-import { clearCart } from "../features/cart/cartSlice";
 
 export const action =
   (store, queryClient) =>
@@ -60,4 +61,5 @@ const CheckoutForm = () => {
     </Form>
   );
 };
+
 export default CheckoutForm;

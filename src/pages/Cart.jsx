@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { CartItemsList, SectionTitle, CartTotals } from "../components";
 import { Link } from "react-router-dom";
+
+import { CartItemsList, SectionTitle, CartTotals } from "../components";
 
 const Cart = () => {
   const user = useSelector((state) => state.userState.user);
@@ -34,4 +35,5 @@ const Cart = () => {
     </>
   );
 };
+
 export default Cart;

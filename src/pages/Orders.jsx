@@ -1,5 +1,6 @@
 import { redirect, useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
+
 import { customFetch } from "../utils";
 import {
   OrdersList,
@@ -33,9 +34,11 @@ export const loader =
       toast.warn("You must logged in to view orders");
       return redirect("/login");
     }
+
     const params = Object.fromEntries([
       ...new URL(request.url).searchParams.entries(),
     ]);
+
     try {
       const response = await queryClient.ensureQueryData(
         ordersQuery(params, user)
@@ -43,7 +46,6 @@ export const loader =
 
       return { orders: response.data.data, meta: response.data.meta };
     } catch (error) {
-      console.log(error);
       const errorMessage =
         error?.response?.data?.error?.message ||
         "there was an error placing your order";
@@ -55,9 +57,11 @@ export const loader =
 
 const Orders = () => {
   const { meta } = useLoaderData();
+
   if (meta.pagination.total < 1) {
     return <SectionTitle text="please make an order" />;
   }
+
   return (
     <>
       <SectionTitle text="Your Orders" />
@@ -66,4 +70,5 @@ const Orders = () => {
     </>
   );
 };
+
 export default Orders;
