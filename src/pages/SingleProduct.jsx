@@ -113,7 +113,7 @@ const SingleProduct = () => {
               value={amount}
               onChange={handleAmount}
             >
-              {generateAmountOptions(20)}
+              {generateAmountOptions(5)}
             </select>
           </div>
           {/* CART BTN */}

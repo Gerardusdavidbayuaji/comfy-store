@@ -34,8 +34,8 @@ const Login = () => {
   const loginAsGuestUser = async () => {
     try {
       const response = await customFetch.post("/auth/local", {
-        identifier: "bejo@gmail.com",
-        password: "5432112345",
+        identifier: import.meta.env.VITE_GUEST_IDENTIFIER,
+        password: import.meta.env.VITE_GUEST_PASSWORD,
       });
       dispatch(loginUser(response.data));
       toast.success("welcome guest user");
